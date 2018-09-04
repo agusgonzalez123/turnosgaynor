@@ -148,6 +148,7 @@ export default class App extends Component {
                         <Link to="/turnos" className="navbar-brand colors ">Turnos</Link>
                         <Link to="/contacto" className="navbar-brand colors">Contacto</Link>
                         <Link to="/login" className="navbar-brand colors ">Staff</Link>
+                        <Link to="/register" className="navbar-brand colors ">Staffssss</Link>
                       </span>}
                 </li>
               </ul>
