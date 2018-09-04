@@ -1,0 +1,702 @@
+body {
+  font-family: 'Roboto',  sans-serif !important;
+}
+
+.color {
+  background-color: #ededed;
+  margin-top: 30px;
+  color: #f77be8;
+}
+
+.mail {
+  margin: 10px 0;
+}
+
+.dows {
+  margin-top: 30px;
+}
+
+.btnc {
+  padding: 5px;
+  margin-left: 3px;
+  color: white;
+  background: #de86ac;
+  border: none;
+}
+
+.space {
+  border-top: 2px solid pink;
+  margin-bottom: 30px;
+}
+
+.spaceInput {
+    margin-bottom: 27px;
+}
+
+.multiselect {
+  padding: 0.5em 1.5em;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.navbar-item {
+  font-weight: bold;
+}
+
+.lineIn {
+  color: black;
+  font-weight: bold;
+}
+
+.textoContacto {
+  margin-top: -10px;
+}
+
+#bailarina3 {
+  height: 230px;
+  width: 130px;
+}
+
+#fondoMobile {
+  display: none;
+}
+
+.vistaTurnos {
+  height: auto;
+  vertical-align: center;
+  background-color: #feefff;
+  padding: 10px 10px;
+  border: 2px solid pink;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style-type: none;
+  padding: 5px 10px 0 0;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+span {
+  color: pink;
+}
+
+.turnos-view {
+  height: auto;
+  background-color:#ffdbf7;
+  border-radius: 10px;
+  padding: 2em;
+  width: 100%;
+  margin-top: 30px;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.columnsa {
+  height: 100px;
+}
+
+.historial {
+  width: 100%;
+}
+.columnsa-flex {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+
+
+.ingresar {
+  background-color: #f77be8;
+  color: white;
+  width: 100%;
+  margin: 20px 0 50px 0;
+}
+
+.marginBottom {
+  margin-bottom: 20px;
+}
+
+.containerHeader {
+  margin-top: 20px;
+  border-color: none;
+  width: 1140px;
+}
+
+.goingUp {
+  margin-top: 10px;
+}
+
+.jumbotron {
+  background-color: white;
+}
+
+.modalButton {
+  float: right;
+}
+
+.alert-success {
+  margin-top: 20px;
+  background-color: #fff !important ;
+}
+
+.alert-danger {
+  margin-top: 20px;
+}
+
+.center {
+  width: 60%;
+  text-align: center;
+}
+
+.brr {
+  color: #de86ac !important;
+  width: 320px;
+  text-align: center;
+  margin-top: -5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.heading1 {
+  text-align: center;
+  color: #f091b1;
+  width:80%;
+  font-size: 30px;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.btnPink {
+  background-color: #f091b9;
+  color: white !important ;
+  width: 100%;
+  margin: 20px 0 50px -80px;
+}
+
+.heading5 {
+  color: #f091b1;
+  width:80%;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#botonesTurnos {
+  position: relative;
+  margin-left: -30px;
+  margin-top: -50px;
+}
+
+#subir {
+  margin-top: -50px;
+}
+
+.heading2 {
+  text-align: center;
+  color: #fc67de;
+  width:20%;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.header {
+  background-color: hsl(0, 0%, 96%);
+  padding: 0 1em;
+  width: 100%;
+}
+
+.container {
+  max-width: 1100px;
+
+}
+
+
+.indexSection {
+  width: 100%;
+}
+
+.line {
+  width: 18em;
+  background-color: pink;
+  height: 0.15em;
+  margin: auto;
+}
+
+a, Link {
+  color: white;
+}
+
+.facebook {
+  height: 40px;
+  margin-left: 100px !important;
+}
+
+.alert {
+  height: 80px;
+}
+
+.facebook {
+  margin-left: 45px;
+}
+
+.containerFooter {
+  background-color: #f091b9;
+  padding: 1.3em 0.5em;
+  margin-top: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.footerText {
+  font-weight: bold;
+  color: #262626;
+}
+
+.floater {
+  float: right;
+}
+
+.verticalAlg {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.select {
+  height: 50%;
+  margin: auto;
+}
+
+.botones {
+  margin-top: 70px;
+  margin-left: 150px;
+}
+
+.margin-bottom{
+  margin-bottom: 40px !important;
+}
+
+#botonesTurnosCrear {
+  margin-top: 250px;
+}
+
+.username-input {
+  width: 60%;
+  margin-left: 30px;
+}
+
+.page1{
+  width: 70%;
+  text-align: center;
+}
+
+.turnos {
+  height: auto;
+  background-color:#ffdbf7;
+  border-radius: 10px;
+  padding: 2em;
+  width: 100%;
+  margin-top: 30px;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.columns {
+  text-align: center;
+}
+
+.colors {
+  color: #de86ac !important;
+}
+
+.sub {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.bailarinaMain{
+  width: 100%;
+}
+
+.contactoMessage {
+  text-align: center;
+  width:100%;
+  margin: auto;
+}
+
+.mensaje {
+  margin-left: -15px;
+  margin-bottom: 10px;
+}
+
+.navbar-default {
+  border-color: none;
+}
+
+nav {
+  border-color: none;
+}
+
+.navbar {
+  border-color: none;
+}
+
+.turnosContacto {
+  height: 50vh;
+  background-color: pink;
+  border-radius: 10px;
+  padding: 2em;
+  width: 50%;
+  margin-top: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.containers {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rows {
+  width: 50%;
+}
+
+.cols {
+  width: 50%;
+}
+
+#thia {
+  margin-right: 20px;
+}
+
+#bailarina2{
+  height: 45vh;
+  margin-left: 30%;
+}
+
+#mainChange {
+  max-width: 1070px;
+  height: auto;
+}
+
+.showClient {
+  display: none;
+}
+
+.centered {
+  margin: auto;
+}
+
+.inputs {
+  width: 40%;
+}
+
+.h4 {
+  font-size: 20px;
+  height: auto;
+}
+
+#contactoTurnos {
+  width: 500px;
+  margin: auto;
+}
+
+.imagenesContacto {
+  width: 50%;
+}
+
+.turnosContainer {
+  display: flex;
+}
+
+.primera {
+  width: 50%;
+}
+
+.contactos {
+  width: 30%;
+}
+
+.btn-danger {
+  color: black;
+}
+
+.datepickerSir {
+  padding: 0.5em 0.7em;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+.selectSir {
+  padding: 0.5em 0.7em;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.containerContacto {
+  margin: auto;
+  text-align: center;
+}
+
+.heading3 {
+  margin: 20px  auto;
+  color: #f091b1;
+  width:20%;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.colorPink {
+  color: #ed81b1;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.mensaje {
+  margin-bottom: 20px;
+}
+
+.btnTurnos {
+  width: 100px !important;
+  font-weight: bold !important;
+  border-radius: 10% !important;
+  background-color: #ffa5ff !important;
+  color: white !important;
+  margin-right: 10px !important;
+}
+
+.verTurnosContainer{
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  border: 2px solid #ffa5ff;
+  border-radius: 10px;
+}
+
+.btnTurnosSend {
+  width: 100px !important;
+  font-weight: bold !important;
+  border-radius: 10% !important;
+  background-color: #f091b9 !important;
+  color: white !important;
+  margin-right: 10px !important;
+}
+
+.turnos-control {
+  width: 100%;
+}
+
+.logoN {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  margin-top:-5px
+}
+
+.theFondo {
+  display: none;
+}
+
+.botonCuchi {
+  background-color: pink;
+  border-radius: 10%;
+  border: none;
+  margin-left: 5px;
+}
+
+.consultas-input-wrapper {
+  display: flex;
+}
+
+.inputConsulta {
+  max-width: 80%;
+}
+
+@media (max-width: 900px) {
+  .containerHeader {
+    width: 100%;
+  }
+  .botones {
+    margin-top: 50px;
+  }
+  .colorPink {
+    font-size: 15px;
+  }
+  .btnPink {
+    margin: auto;
+    background-color: #f091b9;
+  }
+  .containerContacto{
+    display: none;
+  }
+  .containerFooter {
+    width: 100%;
+  }
+  .vistaTurnos{
+    height: auto;
+    width: 100%;
+  }
+  .turnos-view{
+    height: auto;
+  }
+  #mainChange {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+    #mainChange {
+        display: none;
+    }
+    .brr {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    #botonesTurnosCrear {
+      margin-top: 50px;
+    }
+    .turno-wrapper {
+      margin-left: -50px !important;
+    }
+    .consultas-input-wrapper {
+      margin-left: -40px !important;
+      margin-top: 10px;
+    }
+    .containerFooter {
+      height: auto;
+      padding: 10px;
+    }
+    .heading5 {
+      font-size: 25px;
+      margin-left: 15px;
+    }
+    .footerTextCopy {
+      font-size: 10px !important;
+    }
+    .btnTurnosSend {
+      margin-top: 10px;
+    }
+    .vistaTurnos{
+      height: auto;
+      width: 440px;
+      margin-left: -40px;
+    }
+    .colorPink {
+      font-size: 15px;
+    }
+    .turnos-view{
+      height: auto;
+    }
+    .botonoes {
+      margin-top: 30px;
+    }
+    .spaceInput {
+      margin-bottom: 10px;
+    }
+    .colors {
+      width: 100%;
+    }
+    .salir {
+      margin-top: -5px;
+    }
+    .botones {
+      margin-left: -15px;
+    }
+    .btnTurnosSend {
+      margin-top: -3px;
+    }
+    .nombre {
+      margin-top: 30px !important;
+      width: 250px !important;
+    }
+    .heading2 {
+      font-size: 12px;
+      margin-left: -10px;
+      font-weight: bold;
+    }
+    .footerTextCopy {
+      font-size: 10px;
+      width: 40%;
+      position: relative;
+      bottom: -15px;
+    }
+    .facebook {
+      float: right;
+    }
+    .containerContacto {
+      display: none;
+    }
+
+    .heading3 {
+      margin:7px  auto;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    #bailarina3 {
+      margin-top: 10px;
+    }
+    #botonesTurnos{
+      margin-left: 55px;
+    }
+    #subir {
+      margin-top: 5px;
+      margin-left: 55px;
+    }
+    .turnos {
+      width: 100%;
+      margin: auto;
+      height: auto;
+    }
+    .sub {
+      font-size: 15px;
+      width: 80%;
+    }
+    #fondoMobile{
+      display: block;
+      width: 200px !important;
+    }
+    #bailarina2{
+      margin-left: 30%;
+      margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 400px){
+  .vistaTurnos {
+    width: 285px;
+  }
+  .moverTurno{
+   margin-left: -50px;
+  }
+  .turnos-view {
+    width: 280px;
+    margin-left: -20px;
+  }
+  .consultas-wrapper {
+    width: auto;
+    position: relative;
+  }
+}
