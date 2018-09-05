@@ -688,6 +688,9 @@ select::-ms-expand {
   .vistaTurnos {
     width: 285px;
   }
+  .navbar {
+    height: 140px;
+  }
   .moverTurno{
    margin-left: -50px;
   }
