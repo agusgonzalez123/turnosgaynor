@@ -1,3 +1,11 @@
+@media (min-width: 1400px) {
+  .navbar-header {
+    vertical-align: center;
+  }
+  .navbar {
+    height: 80px;
+  }
+}
 body {
   font-family: 'Roboto',  sans-serif !important;
 }

@@ -30,6 +30,7 @@ class crearTurno extends Component {
   }
 
   handleSubmit(e){
+  e.preventDefault();
   const rootRef = firebase.database().ref().child('Gaynor Minden');
   const dayRef = rootRef.child('Disponibles');
   const turno = {
@@ -39,6 +40,13 @@ class crearTurno extends Component {
   //Enviar turnos
   dayRef.push(turno);
 }
+
+callRender(){
+  this.setState({
+    hora: []
+  })
+}
+
 
   render(){
     return (
