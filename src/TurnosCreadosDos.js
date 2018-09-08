@@ -18,7 +18,7 @@ function setSuccessMsg(success) {
     }
 }
 
-class TurnosCreados extends React.Component {
+class TurnosCreadosDos extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -57,80 +57,11 @@ class TurnosCreados extends React.Component {
         })
     }
 
-    async handleDate(e) {
-        let select = e.target;
-
-        this.handleChange(select.selectedOptions[0].dataset.id);
-
-        await this.setState({
-            startDate: select.value
-        })
-    }
-
-    async handleHora(e) {
-        let select = e.target;
-        this.removeHora(select.selectedOptions[0].dataset.id);
-
-        await this.setState({
-            horaIdState: select.value
-        })
-    }
-
-    async handleHour(e) {
-        await this.setState({
-            hora: e.target.value
-        })
-    }
-
-    async handleName(e) {
-        await this.setState({
-            name: e.target.value
-        })
-    }
-
-    async handleMail(e) {
-        await this.setState({
-            mail: e.target.value
-        })
-    }
-
-    async handleConsulta(e) {
-        await this.setState({
-            consulta: e.target.value
-        })
-    }
-
-    async handleTelefono(e) {
-        await this.setState({
-            telefono: e.target.value
-        })
-    }
-
     handleChange(fechaId) {
         const rootsRefa = firebase.database().ref().child('Gaynor Minden');
         const daysRefa = rootsRefa.child(`Disponibles/${fechaId}`);
-        this.setState({fechaIdState: fechaId})
-        daysRefa.on('value', snap => {
-            let horas = snap.val();
-            let newState = [];
-            this.setState({
-              horasNew: []
-            })
-              for(let hora of horas.Hora){
-                newState.push(hora)
-            }
-            this.setState({
-              horasNew: newState
-            })   
-          })
-    }
+        daysRefa.remove();
 
-    removeHora(horaId) {
-        const fechaIdState = this.state.fechaIdState;
-        const rootRefse = firebase.database().ref().child('Gaynor Minden');
-        const dayDay = rootRefse.child(`Disponibles/${fechaIdState}`);
-        const dayRefse = rootRefse.child(`Disponibles/${fechaIdState}/Hora/${horaId}`);
-        dayRefse.remove();
     }
 
     render() {
@@ -138,7 +69,7 @@ class TurnosCreados extends React.Component {
         return (
             <div className="container-fluid">
                 <form>
-                    <h1 className="heading1" >Eliminar Hora</h1>
+                    <h1 className="heading1" >Eliminar Dia</h1>
                     <div className="row turnos">
                         <div className="col-md-6 centered">
                             <img id="bailarina2" src={bailarina} alt="Bailarina" />
@@ -161,10 +92,10 @@ class TurnosCreados extends React.Component {
                             <div className="row">
                                 <div className="col-md-6 margin-bottom ">
                                     <h3 className="colorPink" >FECHA <span className="glyphicon glyphicon-calendar"></span></h3>
-                                    <select className="selectSir" onChange={this.handleDate.bind(this)} >
+                                    <select className="selectSir" >
                                         {this.state.fechas.map((fecha, index) => {
                                             return (
-                                                <option key={index} value={fecha.Dia} data-id={fecha.id} >
+                                                <option key={index} value={fecha.Dia} data-id={fecha.id} onClick={() => this.handleChange(index)}>
                                                     {fecha.Dia} 
                                                 </option>
                                             )
@@ -172,18 +103,7 @@ class TurnosCreados extends React.Component {
                                     </select>
                                 </div>
                                 <div className="col-md-6">
-                                    <h3 className="colorPink" >HORA <span className="glyphicon glyphicon-hourglass"></span></h3>
-                                      <div className="select">
-                                        <select className="selectSir">
-                                          {this.state.horasNew.map( (hora, index)=> {
-                                            return (
-                                              <option key={index} value={hora} onClick={() => this.removeHora(index)}>
-                                                {hora}
-                                              </option>
-                                            )
-                                          })}
-                                        </select>
-                                      </div>
+                                    <h3 className="colorPink" >Seleccionar día a eliminar</h3>
                                 </div>
                             </div>
                         </div>
@@ -194,4 +114,4 @@ class TurnosCreados extends React.Component {
     }
 }
 
-export default TurnosCreados
+export default TurnosCreadosDos

@@ -72,6 +72,7 @@ callRender(){
               <h3 className="colorPink" >HORA <span className="glyphicon glyphicon-hourglass"></span></h3>
               <div className="select">
                 <select multiple className="multiselect" onChange={this.handleHour.bind(this)}>
+                  <option></option>
                   <option value="08:00">08:00</option>
                   <option value="08:30">08:30</option>
                   <option value="09:00">09:00</option>

@@ -13,6 +13,7 @@ import Footer from './Footer'
 import viewTurnos from './ViewTurnos'
 import crearTurno from './CrearTurnos'
 import TurnosCreados from './TurnosCreados';
+import TurnosCreadosDos from './TurnosCreadosDos';
 
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
@@ -134,7 +135,8 @@ export default class App extends Component {
                   {this.state.authed
                     ? 
                     <div>
-                      <Link to='/turnos-creados' className="navbar-brand colors"> Turnos Creados </Link>
+                      <Link to='/dia' className="navbar-brand colors"> Eliminar Dia </Link>
+                      <Link to='/hora' className="navbar-brand colors"> Eliminar Hora </Link>
                       <Link to="/turnos-hechos" className="navbar-brand colors"> Turnos Solicitados </Link>
                       <Link to="/crear-turno" className="navbar-brand colors"> Crear Turnos </Link>
                       <button
@@ -164,7 +166,8 @@ export default class App extends Component {
                 <Route authed={this.state.authed} path='/contacto' component={Contacto} />
                 <PrivateRoute authed={this.state.authed} allowed={'admin'} path='/turnos-hechos' component={viewTurnos} />
                 <PrivateRoute authed={this.state.authed} allowed={'admin'} path='/crear-turno' component={crearTurno} />
-                <PrivateRoute authed={this.state.authed} allowed={'admin'} path='/turnos-creados' component={TurnosCreados} />
+                <PrivateRoute authed={this.state.authed} allowed={'admin'} path='/dia' component={TurnosCreadosDos} />
+                <PrivateRoute authed={this.state.authed} allowed={'admin'} path='/hora' component={TurnosCreados} />
               </Switch>
             </div>
           </div>
