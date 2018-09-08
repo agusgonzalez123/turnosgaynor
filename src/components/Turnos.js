@@ -113,6 +113,7 @@ class Turnos extends React.Component {
 }
 
 handleChange(fechaId) {
+  console.log('esta funcionando')
   const rootsRefa = firebase.database().ref().child('Gaynor Minden');
   const daysRefa = rootsRefa.child(`Disponibles/${fechaId}`);
   daysRefa.on('value', snap => {
@@ -127,7 +128,6 @@ handleChange(fechaId) {
     this.setState({
       horasNew: newState
     })   
-    console.log(this.state.horasNew)
   })
 }
 
