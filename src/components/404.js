@@ -14,7 +14,6 @@ import viewTurnos from './ViewTurnos'
 import crearTurno from './CrearTurnos'
 import TurnosCreados from './TurnosCreados';
 import TurnosCreadosDos from './TurnosCreadosDos';
-import NoComponent from './404';
 
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
@@ -45,7 +44,7 @@ const config = {
   client_id: '{0oag3yi8vpTFWxKXQ0h7}'
 }
 
-export default class App extends Component {
+export default class NoComponent extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -169,7 +168,6 @@ export default class App extends Component {
                 <PrivateRoute authed={this.state.authed} allowed={'admin'} path='/crear-turno' component={crearTurno} />
                 <PrivateRoute authed={this.state.authed} allowed={'admin'} path='/dia' component={TurnosCreadosDos} />
                 <PrivateRoute authed={this.state.authed} allowed={'admin'} path='/hora' component={TurnosCreados} />
-                <Route component={IndexPage} />
               </Switch>
             </div>
           </div>

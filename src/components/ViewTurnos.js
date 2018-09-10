@@ -18,7 +18,7 @@ function setMessage(succes) {
   }
 
 class viewTurnos extends React.Component {
-
+ 
   constructor(props){
     super(props);
     this.state = {
@@ -154,24 +154,12 @@ class viewTurnos extends React.Component {
                 <h5 className="colorPink">CONSULTAS</h5>
                   <div className="col-md-6 columnsa-flex verTurnosContainer">
                   <ul className="displayFlex">
-                    <div clasName="col-md-4">
-                      {this.state.turnos.map(turno => {
-                        return (
-                          <div className="turno-wrapper">
-                            <li key={turno.id} className="space">
-                              <span className="glyphicon glyphicon-play"></span>
-                              <b>{turno.Nombre}</b>
-                            </li>
-                          </div>
-                        )
-                      })}
-                    </div>
-                    <div className="col-md-4">
+                    <div className="col-md-8">
                       {this.state.historialConsultas.map(historial => {
                         return (
                           <div className="consultas-wrapper" >
                             <li key={historial.id}>
-                              {historial.Historial}
+                              <span className="glyphicon glyphicon-play"></span> {historial.Historial}
                               <button className="botonCuchi" onClick={()=>this.removeConsulta(historial.id)}>x</button>
                             </li>
                           </div>

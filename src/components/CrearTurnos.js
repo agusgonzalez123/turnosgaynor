@@ -7,13 +7,21 @@ import 'react-datepicker/dist/react-datepicker.css'
 import './styles.css'
 import 'bootstrap3/dist/css/bootstrap.css'
 
+  function setSuccessMsg(success) {
+    return {
+      sendMessageSuccess: success
+    }
+  }
+
 class crearTurno extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       startDate: moment(),
-      hora: []
+      hora: [],
+      sendMessage: null,
+      sendMessageSuccess: null
     }
   }
 
@@ -37,6 +45,7 @@ class crearTurno extends Component {
     Dia: this.state.startDate.format('DD-MM-YYYY'),
     Hora: this.state.hora
   }
+  this.setState(setSuccessMsg('Turno creado correctamente.'))
   //Enviar turnos
   dayRef.push(turno);
   this.callRender();
@@ -95,13 +104,6 @@ callRender(){
                 <button value="cancel" className="btn btnTurnos" >Cancelar</button>
                 <button type="Submit" value="Enviar" className="btn btnTurnosSend">Solicitar</button>
               </div>
-                {
-                  this.state.sendMessage &&
-                  <div className="alert alert-danger" role="alert">
-                    <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                    <span className="sr-only">Error:</span>
-                  </div>
-                }
                 {
                   this.state.sendMessageSuccess &&
                   <div className="alert alert-success" role="alert">
