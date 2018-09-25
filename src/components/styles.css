@@ -531,7 +531,7 @@ select::-ms-expand {
 }
 
 .inputConsulta {
-  max-width: 80%;
+  max-width: 100%;
 }
 
 @media (max-width: 900px) {

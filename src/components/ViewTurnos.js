@@ -152,9 +152,9 @@ class viewTurnos extends React.Component {
                   </ul>
                 </div>
                 <h5 className="colorPink">CONSULTAS</h5>
-                  <div className="col-md-6 columnsa-flex verTurnosContainer">
+                  <div className="col-md-12 columnsa-flex verTurnosContainer">
                   <ul className="displayFlex">
-                    <div className="col-md-8">
+                    <div className="col-md-4">
                       {this.state.historialConsultas.map(historial => {
                         return (
                           <div className="consultas-wrapper" >
@@ -166,17 +166,11 @@ class viewTurnos extends React.Component {
                         )
                       })}
                     </div>
-                    <div className="col-md-4">
-                      {this.state.turnos.map(turno => {
-                        return(
+                    <div className="col-md-8">
                           <div className="consultas-input-wrapper" >
-                            <li key={turno.id + 1} className="spaceInput">
-                              <input className="inputConsulta" type="text" placeholder={turno.Nombre} onChange={this.handleHistorial.bind(this)} />
+                              <textarea className="inputConsulta" type="text" placeholder="Nombre: Producto consultado" onChange={this.handleHistorial.bind(this)}></textarea>
                               <button className="botonCuchi" type="Submit">+</button>
-                            </li>
                           </div>
-                        )
-                      })}
                     </div>
                   </ul>
                 </div>

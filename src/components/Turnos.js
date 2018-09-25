@@ -26,6 +26,8 @@ class Turnos extends React.Component {
       hora: '',
       horas: [],
       fechas: [],
+      fechaSeleccionada: '',
+      horaSeleccionada: '',
       horasNew: [],
       name: '',
       mail:'',
@@ -71,6 +73,13 @@ class Turnos extends React.Component {
     })
   }
 
+  async deleteHora(horaId){
+    let horaSeleccionada = horaId;
+    await this.setState({
+      horaSeleccionada
+    })
+  }
+
   async handleName(e){
     await this.setState({
       name: e.target.value
@@ -96,6 +105,10 @@ class Turnos extends React.Component {
   }
 
   async handleSubmit(e){
+  let fechaSeleccionada = this.state.fechaSeleccionada;
+  let horaId = this.state.horaSeleccionada;
+  const rootsRefsa = firebase.database().ref().child('Gaynor Minden');
+  const daysRefsa = rootsRefsa.child(`Disponibles/${fechaSeleccionada}/Hora/${horaId}`);
   const rootRefs = firebase.database().ref().child('Gaynor Minden');
   const dayRefs = rootRefs.child('Turnos');
   const turno = {
@@ -109,13 +122,17 @@ class Turnos extends React.Component {
   //Generar el Mensaje de confirmacion
   this.setState(setSuccessMsg('Turno solicitado correctamente.'))
   //Enviar turnos
-  await dayRefs.push(turno);
+  daysRefsa.remove();
+  await this.state.hora === '' ? alert('Hora no seleccionada') : dayRefs.push(turno);
 }
 
-handleChange(fechaId) {
-  console.log('esta funcionando')
+async handleChange(fechaId) {
   const rootsRefa = firebase.database().ref().child('Gaynor Minden');
   const daysRefa = rootsRefa.child(`Disponibles/${fechaId}`);
+  let fechaSeleccionada = fechaId;
+  await this.setState({
+    fechaSeleccionada
+  })
   daysRefa.on('value', snap => {
     let horas = snap.val();
     let newState = [];
@@ -127,7 +144,7 @@ handleChange(fechaId) {
     }
     this.setState({
       horasNew: newState
-    })   
+    })
   })
 }
 
@@ -175,7 +192,7 @@ handleChange(fechaId) {
                 <select className="selectSir" onChange={this.handleHour.bind(this)}>
                   {this.state.horasNew.map( (hora, index)=> {
                     return (
-                      <option key={index} value={hora}>
+                      <option key={index} value={hora} onClick={() => this.deleteHora(index)}>
                         {hora}
                       </option>
                     )
