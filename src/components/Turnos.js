@@ -136,11 +136,16 @@ async handleChange(fechaId) {
   daysRefa.on('value', snap => {
     let horas = snap.val();
     let newState = [];
+    console.log(horas)
     this.setState({
       horasNew: []
     })
-      for(let hora of horas.Hora){
+    if(horas.Hora.length <= 1){
+      alert('No hay turnos disponibles')
+    }else {
+        for(let hora of horas.Hora){
         newState.push(hora)
+      }
     }
     this.setState({
       horasNew: newState
@@ -152,7 +157,7 @@ async handleChange(fechaId) {
 
     return (
       <div className="container-fluid">
-      <form action="https://formspree.io/info@puntasballet.com" onSubmit={this.handleSubmit.bind(this)} method="POST" >
+      <form onSubmit={this.handleSubmit.bind(this)} >
         <h1 className="heading1" >RESERVA TU TURNO</h1>
         <div className="row turnos">
           <div className="col-md-6 centered">

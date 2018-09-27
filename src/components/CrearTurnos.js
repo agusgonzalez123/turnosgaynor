@@ -41,9 +41,10 @@ class crearTurno extends Component {
     e.preventDefault();
   const rootRef = firebase.database().ref().child('Gaynor Minden');
   const dayRef = rootRef.child('Disponibles');
+  let space = '';
   const turno = {
     Dia: this.state.startDate.format('DD-MM-YYYY'),
-    Hora: this.state.hora
+    Hora: [space, ...this.state.hora]
   }
   this.setState(setSuccessMsg('Turno creado correctamente.'))
   //Enviar turnos

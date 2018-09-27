@@ -143,7 +143,7 @@ class viewTurnos extends React.Component {
                         <li key={turno.id}>
                           <div className="moverTurno">
                             <div >
-                                <span className="glyphicon glyphicon-play"></span> <b>{turno.Nombre}</b> el dia <b>{turno.Dia}</b> a las<b>{turno.Hora}</b> Mail:<b>{turno.Mail}</b> Consulta: <b>{turno.Consulta}</b> Telefono: <b> {turno.Telefono} </b> <button className="botonCuchi" onClick={()=>this.removeTurno(turno.id)}>x</button>
+                                <span className="glyphicon glyphicon-play"></span> <b>{turno.Nombre}</b> el dia <b>{turno.Dia}</b> a las <b>{turno.Hora}</b> Mail:<b>{turno.Mail}</b> Consulta: <b>{turno.Consulta}</b> Telefono: <b> {turno.Telefono} </b> <button className="botonCuchi" onClick={()=>this.removeTurno(turno.id)}>x</button>
                             </div>
                           </div>
                         </li>
