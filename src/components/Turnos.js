@@ -105,6 +105,7 @@ class Turnos extends React.Component {
   }
 
   async handleSubmit(e){
+  e.preventDefault();
   let fechaSeleccionada = this.state.fechaSeleccionada;
   let horaId = this.state.horaSeleccionada;
   const rootsRefsa = firebase.database().ref().child('Gaynor Minden');
@@ -119,10 +120,12 @@ class Turnos extends React.Component {
     Consulta: this.state.consulta,
     Telefono: this.state.telefono
   }
+  daysRefsa.remove();
+  console.log(fechaSeleccionada)
+  console.log(horaId)
   //Generar el Mensaje de confirmacion
   this.setState(setSuccessMsg('Turno solicitado correctamente.'))
   //Enviar turnos
-  daysRefsa.remove();
   await this.state.hora === '' ? alert('Hora no seleccionada') : dayRefs.push(turno);
 }
 
@@ -136,15 +139,19 @@ async handleChange(fechaId) {
   daysRefa.on('value', snap => {
     let horas = snap.val();
     let newState = [];
-    console.log(horas)
     this.setState({
       horasNew: []
     })
-    if(horas.Hora.length <= 1){
-      alert('No hay turnos disponibles')
-    }else {
-        for(let hora of horas.Hora){
-        newState.push(hora)
+    if(horas.Hora === undefined) {
+      alert('No hay turnos disponibles');
+    } else {
+      if(horas.Hora.length <= 1){
+        alert('No hay turnos disponibles');
+      }else {
+        let eachHour = horas.Hora
+        Object.values(eachHour).map( ho => {
+          return newState.push(ho);
+        })
       }
     }
     this.setState({
@@ -157,8 +164,7 @@ async handleChange(fechaId) {
 
     return (
       <div className="container-fluid">
-      <form onSubmit={this.handleSubmit.bind(this)} >
-        <h1 className="heading1" >RESERVA TU TURNO</h1>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <div className="row turnos">
           <div className="col-md-6 centered">
             <img id="bailarina2" src={bailarina} alt="Bailarina" />

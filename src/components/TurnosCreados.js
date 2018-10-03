@@ -116,9 +116,10 @@ class TurnosCreados extends React.Component {
             this.setState({
               horasNew: []
             })
-              for(let hora of horas.Hora){
-                newState.push(hora)
-            }
+            let eachHour = horas.Hora
+            Object.values(eachHour).map( ho => {
+              return newState.push(ho);
+            })
             this.setState({
               horasNew: newState
             })   
@@ -129,8 +130,8 @@ class TurnosCreados extends React.Component {
         const fechaIdState = this.state.fechaIdState;
         const rootRefse = firebase.database().ref().child('Gaynor Minden');
         const dayDay = rootRefse.child(`Disponibles/${fechaIdState}`);
-        const dayRefse = rootRefse.child(`Disponibles/${fechaIdState}/Hora/${horaId}`);
-        dayRefse.remove();
+        const dayRefse = dayDay.child(`/Hora/${horaId}`);
+        dayRefse.remove()
     }
 
     render() {
