@@ -105,7 +105,6 @@ class Turnos extends React.Component {
   }
 
   async handleSubmit(e){
-  e.preventDefault();
   let fechaSeleccionada = this.state.fechaSeleccionada;
   let horaId = this.state.horaSeleccionada;
   const rootsRefsa = firebase.database().ref().child('Gaynor Minden');
@@ -145,7 +144,7 @@ async handleChange(fechaId) {
     if(horas.Hora === undefined) {
       alert('No hay turnos disponibles');
     } else {
-      if(horas.Hora.length <= 1){
+      if(horas.Hora.length < 1){
         alert('No hay turnos disponibles');
       }else {
         let eachHour = horas.Hora
@@ -164,7 +163,7 @@ async handleChange(fechaId) {
 
     return (
       <div className="container-fluid">
-      <form onSubmit={this.handleSubmit.bind(this)}>
+      <form action="https://formspree.io/robertcelt95@gmail.com" onSubmit={this.handleSubmit.bind(this)} method="POST">
         <div className="row turnos">
           <div className="col-md-6 centered">
             <img id="bailarina2" src={bailarina} alt="Bailarina" />
@@ -187,7 +186,7 @@ async handleChange(fechaId) {
             <div className="row">
               <div className="col-md-6 margin-bottom ">
                 <h3 className="colorPink" >FECHA <span className="glyphicon glyphicon-calendar"></span></h3>
-                <select className="selectSir" onChange={this.handleDate.bind(this)} >
+                <select className="selectSir" name="Fecha " onChange={this.handleDate.bind(this)} >
                   {this.state.fechas.map( (fecha, index) => {
                         return (
                           <option key={index} value={fecha.Dia} data-id={fecha.id} >
@@ -200,7 +199,7 @@ async handleChange(fechaId) {
               <div className="col-md-6">
               <h3 className="colorPink" >HORA <span className="glyphicon glyphicon-hourglass"></span></h3>
               <div className="select">
-                <select className="selectSir" onChange={this.handleHour.bind(this)}>
+                <select className="selectSir" name="Hora " onChange={this.handleHour.bind(this)}>
                   {this.state.horasNew.map( (hora, index)=> {
                     return (
                       <option key={index} value={hora} onClick={() => this.deleteHora(index)}>
@@ -212,7 +211,7 @@ async handleChange(fechaId) {
               </div>
               </div>
               <div className="nombre" >
-                <input type="text" name="NombreYApellido" placeholder="*Nombre y Apellido" onChange={this.handleName.bind(this)} className="form-control username-input"  required/>
+                <input type="text" name="Nombre y Apellido" placeholder="*Nombre y Apellido" onChange={this.handleName.bind(this)} className="form-control username-input"  required/>
               </div>
               <div className="nombre" >
                 <input type="text" name="Telefono" placeholder="*Telefono" onChange={this.handleTelefono.bind(this)} className="form-control mail username-input" required />
