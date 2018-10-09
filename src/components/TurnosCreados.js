@@ -178,7 +178,7 @@ class TurnosCreados extends React.Component {
                                         <select className="selectSir">
                                           {this.state.horasNew.map( (hora, index)=> {
                                             return (
-                                              <option key={index} value={hora} onClick={() => this.removeHora(index)}>
+                                              <option key={index} value={hora} onClick={() => this.removeHora(hora.Id)}>
                                                 {hora}
                                               </option>
                                             )

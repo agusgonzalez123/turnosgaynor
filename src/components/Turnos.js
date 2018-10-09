@@ -24,6 +24,7 @@ class Turnos extends React.Component {
     this.state = {
       startDate: '',
       hora: '',
+      horaId: '',
       horas: [],
       fechas: [],
       fechaSeleccionada: '',
@@ -74,9 +75,9 @@ class Turnos extends React.Component {
   }
 
   async deleteHora(horaId){
-    let horaSeleccionada = horaId;
+    console.log(horaId)
     await this.setState({
-      horaSeleccionada
+      horaId
     })
   }
 
@@ -106,7 +107,7 @@ class Turnos extends React.Component {
 
   async handleSubmit(e){
   let fechaSeleccionada = this.state.fechaSeleccionada;
-  let horaId = this.state.horaSeleccionada;
+  let horaId = this.state.horaId;
   const rootsRefsa = firebase.database().ref().child('Gaynor Minden');
   const daysRefsa = rootsRefsa.child(`Disponibles/${fechaSeleccionada}/Hora/${horaId}`);
   const rootRefs = firebase.database().ref().child('Gaynor Minden');
@@ -119,9 +120,9 @@ class Turnos extends React.Component {
     Consulta: this.state.consulta,
     Telefono: this.state.telefono
   }
+  // Tengo que revisar por que razon es que no borra
   daysRefsa.remove();
-  console.log(fechaSeleccionada)
-  console.log(horaId)
+  alert('Turno solicitado correctamente. ¡No olvides traer tus punteras! Dirección: Santa Fe 1229 Piso 2C, CABA. Por favor seleccionar el cuadro de confirmación!');
   //Generar el Mensaje de confirmacion
   this.setState(setSuccessMsg('Turno solicitado correctamente.'))
   //Enviar turnos
@@ -178,7 +179,7 @@ async handleChange(fechaId) {
                   this.state.sendMessageSuccess &&
                   <div className="alert alert-success" role="alert">
                     <span className="sr-only">Success:</span>
-                    <p className="link"><span className="glyphicon glyphicon-ok" aria-hidden="true"></span>Turno solicitado correctamente. ¡No olvides traer tus punteras!</p>
+                    <p className="link"><span className="glyphicon glyphicon-ok" aria-hidden="true"></span>Turno solicitado correctamente. ¡No olvides traer tus punteras! Dirección: Santa Fe 1229 Piso 2C, CABA</p>
                   </div>
                 }
           </div>
